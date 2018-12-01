@@ -1,0 +1,7 @@
+.poljeNeispravno {
+    -fx-background-colour: #ff2d56;
+}
+
+.poljeIspravno {
+    -fx-background-colour: #488055;
+}

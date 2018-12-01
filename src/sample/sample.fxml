@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="860.0" style="-fx-background-color: aliceblue; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: indigo; -fx-border-insets: 12;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <center>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+        <VBox prefHeight="454.0" prefWidth="470.0" spacing="7.0">
+          <children>
+            <Label text="Detaljni lični podaci">
+              <font>
+                <Font size="16.0" fx:id="x2" />
+              </font>
+            </Label>
+            <GridPane prefHeight="170.0" prefWidth="-1.0">
+              <children>
+                <Label text="JMBG" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="Datum rođenja" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="Mjesto rođenja" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="JMBG" onKeyReleased="#unosJMBG" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <ComboBox fx:id="mjestoBox" editable="true" onKeyReleased="#unosMjesta" prefHeight="31.0" prefWidth="225.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                        <DatePicker fx:id="datum" editable="false" promptText="Unesite datum rođenja" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="112.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="284.0" />
+              </columnConstraints>
+              <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+              </padding>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <Label text="Podaci o studiju" />
+            <GridPane padding="$x1" prefHeight="220.0" prefWidth="419.0">
+              <children>
+                <Label text="Odsjek" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="Godina studija" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="Ciklus studija" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label text="Status" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label text="Boračka kategorija" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <ChoiceBox fx:id="odsjekBox" prefWidth="139.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="godinaBox" prefWidth="139.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox fx:id="ciklusBox" prefWidth="139.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="2.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="1" GridPane.valignment="CENTER">
+                  <children>
+                    <RadioButton fx:id="red" mnemonicParsing="false" text="Redovan">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="status" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <RadioButton mnemonicParsing="false" text="Redovan samofinansirajući" toggleGroup="$status" />
+                  </children>
+                  <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                </HBox>
+                <CheckBox fx:id="boracko" blendMode="SRC_OVER" mnemonicParsing="false" text="DA" textFill="BLACK" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="104.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="295.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x3" />
+          </padding>
+        </VBox>
+        <Separator blendMode="SRC_OVER" orientation="VERTICAL" prefHeight="200.0">
+          <effect>
+            <InnerShadow choke="0.5222929936305732" />
+          </effect>
+        </Separator>
+        <VBox prefHeight="454.0" prefWidth="316.9999000000025" spacing="7.0">
+          <children>
+            <Label text="Osnovni podaci" />
+            <GridPane padding="$x1" prefHeight="163.0" prefWidth="328.0">
+              <children>
+                <Label text="Ime" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="Prezime" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="Broj indeksa" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="imeField" onKeyReleased="#krajUnosa" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="prezimeField" onKeyReleased="#krajUnosaP" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="brojIndeksaField" onKeyReleased="#unosIndeksa" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="86.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="147.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <Label text="Kontakt podaci" />
+            <GridPane padding="$x1" prefHeight="126.0" prefWidth="307.0">
+              <children>
+                <Label text="Kontakt adresa" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="Kontakt telefon" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="e-mail adresa" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="adresaField" onKeyReleased="#unosAdresa" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="telefonField" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="mailField" prefWidth="200.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <AnchorPane prefHeight="54.0" prefWidth="304.0">
+              <children>
+                <Button layoutX="105.0" layoutY="5.0" mnemonicParsing="false" onAction="#submit" prefHeight="45.0" prefWidth="110.0" style="-fx-background-color: MEDIUMAQUAMARINE;" text="POTVRDI" textFill="#4e1550">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Button>
+              </children>
+            </AnchorPane>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </children>
+    </HBox>
+  </center>
+  <effect>
+    <InnerShadow color="#cce0ff" height="22.111222382563696" radius="10.535767379080415" width="22.031847133757964">
+      <input>
+        <DropShadow color="#0000001a" height="172.34920634920636" radius="85.67460317460318" width="172.34920634920636" />
+      </input>
+    </InnerShadow>
+  </effect>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x2" />
+  </padding>
+  <stylesheets>
+    <URL value="@stil.css" />
+  </stylesheets>
+</BorderPane>
