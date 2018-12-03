@@ -243,7 +243,7 @@ public class Controller {
     }
 
     private LocalDate izdvoji() {
-        int a = Integer.parseInt(JMBG.getText(0, 2)), b = Integer.parseInt(JMBG.getText(2, 4)), god = Integer.parseInt(JMBG.getText(4, 7)) + 1000 * (2 - JMBG.getText().charAt(4) + '0');
+        int a = Integer.parseInt(JMBG.getText(0, 2)), b = Integer.parseInt(JMBG.getText(2, 4)), god = Integer.parseInt(JMBG.getText(4, 7)) + 1 * (2 - JMBG.getText().charAt(4) + '0');
         return LocalDate.of(god, b, a);
     }
 
@@ -257,6 +257,7 @@ public class Controller {
             if (JMBG.getText().length() != 13) throw new Exception();
             JMBG.setStyle("-fx-background-color: rgba(72,128,85,0.4)");
             greskaO = false;
+            System.out.println(datum.getValue()+" "+izdvoji());
             if (greske.containsKey(datum) && datum.getValue().equals(izdvoji())) {
                 greske.replace(datum, false);
                 datum.setStyle("-fx-background-color: rgba(72,128,85,0.4)");

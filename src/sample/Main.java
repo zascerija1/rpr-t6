@@ -13,7 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Studentska forma");
         primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root, 850, 500));
+        primaryStage.setScene(new Scene(root, 850, 550));
         primaryStage.show();
     }
 
