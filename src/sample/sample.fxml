@@ -93,7 +93,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x3" />
           </padding>
         </VBox>
-        <Separator blendMode="SRC_OVER" orientation="VERTICAL" prefHeight="200.0">
+        <Separator blendMode="SRC_OVER" opacity="0.13" orientation="VERTICAL" prefHeight="200.0">
           <effect>
             <InnerShadow choke="0.5222929936305732" />
           </effect>
