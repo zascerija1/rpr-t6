@@ -185,7 +185,7 @@
             <Separator prefWidth="200.0" />
             <AnchorPane prefHeight="54.0" prefWidth="304.0">
               <children>
-                <Button layoutX="105.0" layoutY="5.0" mnemonicParsing="false" onAction="#submit" prefHeight="45.0" prefWidth="110.0" style="-fx-background-color: MEDIUMAQUAMARINE;" text="POTVRDI" textFill="#4e1550">
+                <Button fx:id="submit" layoutX="105.0" layoutY="5.0" mnemonicParsing="false" onAction="#submit" prefHeight="45.0" prefWidth="110.0" style="-fx-background-color: MEDIUMAQUAMARINE;" text="POTVRDI" textFill="#4e1550">
                   <font>
                     <Font size="18.0" />
                   </font>
