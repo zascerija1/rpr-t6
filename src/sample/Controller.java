@@ -16,6 +16,7 @@ import org.controlsfx.validation.Validator;
 
 import java.time.LocalDate;
 
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 
@@ -243,7 +244,10 @@ public class Controller {
     }
 
     private LocalDate izdvoji() {
-        int a = Integer.parseInt(JMBG.getText(0, 2)), b = Integer.parseInt(JMBG.getText(2, 4)), god = Integer.parseInt(JMBG.getText(4, 7)) + 1 * (2 - JMBG.getText().charAt(4) + '0');
+        int god;
+        if(JMBG.getText().charAt(4)=='9') god=Integer.parseInt(JMBG.getText(4, 7))+1000;
+        else god=Integer.parseInt(JMBG.getText(4, 7))+2000;
+        int a = Integer.parseInt(JMBG.getText(0, 2)), b = Integer.parseInt(JMBG.getText(2, 4));
         return LocalDate.of(god, b, a);
     }
 
@@ -254,7 +258,7 @@ public class Controller {
             if (JMBG.getText().length() >= 7) {
                 if (izdvoji().compareTo(LocalDate.now()) >= 1) throw new Exception();
             }
-            if (JMBG.getText().length() != 13) throw new Exception();
+            if (JMBG.getText().length() != 13) throw  new Exception();
             JMBG.setStyle("-fx-background-color: rgba(72,128,85,0.4)");
             greskaO = false;
             System.out.println(datum.getValue()+" "+izdvoji());

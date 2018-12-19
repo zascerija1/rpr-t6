@@ -120,7 +120,7 @@
                     </FXCollections>
                   </items>
                 </ComboBox>
-                        <DatePicker fx:id="datum" editable="false" prefHeight="31.0" prefWidth="271.0" promptText="Unesite datum rođenja" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="datum" prefHeight="31.0" prefWidth="287.0" promptText="Unesite datum rođenja" GridPane.columnIndex="1" GridPane.rowIndex="1" />
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="172.0" />
